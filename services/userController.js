@@ -73,12 +73,15 @@ async function login(user) {
   console.info(query);
   const result = await db.query(query);
 
-  let message = "Error in creating user";
-
-  if (result.affectedRows) {
-    message = "User created successfully";
+  let message = "Error: nombre o contraseña invalido";
+  let subcripcion = null;
+  if (result.length) {
+    message = "OK: usuario logeado correctamente";
+    subcripcion = result[0].suscription_type_id;
+    return { message, subcripcion };
+  } else {
+    return { message };
   }
-  return { message };
 }
 
 
@@ -86,6 +89,6 @@ async function login(user) {
 module.exports = {
   // getUser,
   createUser,
-  add_suscription
-
+  add_suscription,
+  login
 };
