@@ -23,12 +23,14 @@ userRouter.post("/", async function (req, res, next) {
   }
 });
 
-userRouter.post("/add_suscription", async function (req, res, next) {
+userRouter.post("/confirm_suscription", async function (req, res, next) {
   try {
-    res.json(await userController.add_suscription(req.body));
+    res.json(await userController.confirm_suscription(req.body));
   } catch (err) {
     console.error(`Error while creating programming language`, err.message);
-    next(err);
+    // next(err);
+     res.json({success: false, errors: 'Failed To Create User'});
+
   }
 });
 

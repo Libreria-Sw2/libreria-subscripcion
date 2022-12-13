@@ -44,8 +44,9 @@ async function createUser(user) {
   return { message };
 }
 
-async function add_suscription(body) {
+async function confirm_suscription(body) {
 
+  console.log('body :>> ', body);
   console.log('user_name :>> ', body.user_name);
   var susc = await suscripcionController.getSuscripcionByCode(body.suscription_code);
   console.info("====================================");
@@ -60,7 +61,7 @@ async function add_suscription(body) {
   let message = "Error in creating user";
 
   if (result.affectedRows) {
-    message = "User created successfully";
+    message = "Suscription confirm successfully.";
   }
 
   return { message };
@@ -89,6 +90,7 @@ async function login(user) {
 module.exports = {
   // getUser,
   createUser,
-  add_suscription,
+  confirm_suscription,
   login
+
 };

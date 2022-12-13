@@ -1,10 +1,11 @@
 {
-  "name": "rest-api-tutorial",
+  "name": "biblioteca",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
-    "node-blob": "^0.0.2"
+    "node-blob": "^0.0.2",
+    "nodemon": "^2.0.20"
   }
 }
